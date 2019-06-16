@@ -1,12 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+// Styles
+import "./index.css";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// Importamos las distintas librerias
+import React from "react";
+import ReactDOM from "react-dom";
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+// Importamos los componentes
+// import Header from "./components/Header";
+import SearchContainer from "./containers/SearchContainer";
+// import DetailsContainer from './containers/DetailsContainer';
+
+ReactDOM.render(
+  //<Header />,
+  <SearchContainer />,
+  // <DetailsContainer />,
+  document.getElementById("root")
+);
