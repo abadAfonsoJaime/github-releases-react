@@ -4,9 +4,10 @@ import PropTypes from "prop-types";
 
 // Styles
 import "./Paginator.css";
+import Paginator from ".";
 
-export default PaginatedComponent =>
-  class extends React.Component {
+export default PaginatedComponent => {
+  class Paginator extends React.Component {
     static propTypes = {
       itemsPerPage: PropTypes.number.isRequired,
       data: PropTypes.arrayOf(PropTypes.object).isRequired
@@ -110,4 +111,9 @@ export default PaginatedComponent =>
         </div>
       );
     }
-  };
+  }
+
+  Paginator.WrappedComponent = PaginatedComponent;
+
+  return Paginator;
+};
