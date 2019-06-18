@@ -1,13 +1,34 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
-
 // Componentes
+import ReleaseList from "../../components/ReleaseList";
 
 /**
  * Este container muestra los detalles para un repositorio concreto
+ * Se renderiza cuando un usuario accede a /:user/:repo
+ * En él veremos la lista de releases con los detalles de cada una de ellas
  */
 class DetailsContainer extends React.Component {
+  // Props del component
+  static propTypes = {
+    params: PropTypes.shape({
+      user: PropTypes.string.isRequired,
+      repo: PropTypes.string.isRequired
+    }).isRequired,
+    router: PropTypes.object.isRequired
+  };
+
+  constructor() {
+    super();
+
+    this.back = this.back.bind(this);
+
+    this.state = {
+      releases: [],
+      loading: false
+    };
+  }
+
   stubData() {
     let repo = {
       name: "v1.0",
@@ -38,6 +59,13 @@ class DetailsContainer extends React.Component {
     ];
   }
 
+  componentDidMount() {}
+
+  get repoName() {}
+
+  back() {
+    this.props.router.goBack();
+  }
   /**
    * UI del contenedor
    */
@@ -46,6 +74,7 @@ class DetailsContainer extends React.Component {
       <main className="container">
         <h2>
           Releases of <b>{this.repoName}</b>
+          <button onClick={this.back}>Back</button>
         </h2>
         <ReleaseList
           data={this.state.releases}

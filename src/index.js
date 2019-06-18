@@ -2,9 +2,9 @@
 import "./index.css";
 
 // Importamos las distintas librerias
-import React from "react";
+import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import { Router, Route, hashHistory } from "hashHistory";
+import { HashRouter, Route } from "react-router-dom";
 
 // Importamos los componentes
 import BaseContainer from "./containers/BaseContainer";
@@ -14,11 +14,10 @@ import About from "./components/About";
 import DetailsContainer from "./containers/DetailsContainer";
 
 ReactDOM.render(
-  <Router history={hashHistory}>
-    <Route path="/" component={BaseContainer}>
-      <Route path=":user/:repo" component={DetailsContainer} />
-      <Route path="about" component={About} />
-    </Route>
-  </Router>,
+  <HashRouter basename="/">
+    <Route exact path="/" component={BaseContainer} />
+    <Route path="/:user/:repo" component={DetailsContainer} />
+    <Route path="/about" component={About} />
+  </HashRouter>,
   document.getElementById("root")
 );

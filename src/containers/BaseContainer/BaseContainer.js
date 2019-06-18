@@ -1,23 +1,29 @@
+// Styles
+import "../../index.css";
+
 import React, { Component } from "react";
 
 import SearchContainer from "../SearchContainer";
+import Header from "../../components/Header";
+// import About from "../../components/About";
 
-import { Link, IndexLink } from "react-router";
+import { Link } from "react-router-dom";
 
 class BaseContainers extends Component {
   render() {
     return (
       // IndexLink avoids CSS Style inheritance
       <main className="container">
-        <nav>
-          <IndexLink to="/" className="Link" activeClassName="Link--active">
+        <Header />
+        <nav className="Navigation">
+          <Link to="/" className="Link" activeClassName="Link--active">
             Home
-          </IndexLink>
+          </Link>
           <Link to="/about" className="Link" activeClassName="Link--active">
-            About
+            Go to About
           </Link>
         </nav>
-        {this.props.children} || <SearchContainer />;
+        <SearchContainer />
       </main>
     );
   }

@@ -7,7 +7,7 @@ body {
 
 /* Botones */
 .button + .button {
-  margin-left: .5em;
+  margin-left: 0.5em;
 }
 
 /* Tablas */
@@ -25,14 +25,14 @@ table td .button:last-child {
   }
 
   table td .button + .button {
-    margin-left: .5em;
+    margin-left: 0.5em;
   }
 }
 
 /* Iconos */
 svg {
-  width: .8em !important;
-  height: .8em !important;
+  width: 0.8em !important;
+  height: 0.8em !important;
 }
 
 /* Alineamiento */
@@ -42,4 +42,17 @@ svg {
 
 .align-center {
   text-align: center;
+}
+
+/* Link */
+.Navigation {
+  padding: 1em 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 2em;
+}
+
+.Link--active {
+  color: white;
+  background-color: black;
 }

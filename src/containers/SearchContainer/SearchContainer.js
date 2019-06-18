@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 
 // Importamos los componentes
-import Header from "../../components/Header";
 import SearchForm from "../../components/SearchForm";
 import RepositoryList from "../../components/RepositoryList";
 
@@ -77,7 +76,6 @@ class SearchContainer extends React.Component {
   render() {
     return (
       <main className="container">
-        <Header />
         <SearchForm onSubmit={this.onSubmit} search={this.state.search} />
         <RepositoryList
           data={this.state.results}
